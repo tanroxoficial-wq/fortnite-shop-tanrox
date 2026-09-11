@@ -1,7 +1,5 @@
 # ---------- TEST DISCORD ----------
 
-print("VERSION NUEVA TANROX")
-
 print("ENTRANDO EN TEST DISCORD")
 
 webhook = os.environ.get("DISCORD_WEBHOOK_URL")
