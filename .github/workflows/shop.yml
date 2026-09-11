@@ -3,8 +3,7 @@ name: Fortnite Shop TANROX
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 17 * * *"
-      timezone: "Europe/Madrid"
+    - cron: "0 0 * * *"
 
 jobs:
   run:
