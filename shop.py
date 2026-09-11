@@ -1,33 +1,20 @@
+# ---------- TEST DISCORD ----------
+
 webhook = os.environ.get("DISCORD_WEBHOOK_URL")
 
 print("Webhook encontrado:", bool(webhook))
 
 if webhook:
-    mensaje = (
-        "🔥 NUEVA TIENDA DE FORTNITE 🔥\n\n"
-        "🛒 Mejores skins de la tienda de hoy\n"
-        "⭐ Apoya a un creador: TANROX\n"
-        "🎮 Usa mi código TANROX en la tienda de Fortnite"
+    r = requests.post(
+        webhook,
+        json={
+            "content": "🔥 Prueba automática TANROX funcionando"
+        },
+        timeout=30
     )
 
-    with open("tienda-fortnite.png", "rb") as image:
-        response = requests.post(
-            webhook,
-            files={
-                "file": (
-                    "tienda-fortnite.png",
-                    image,
-                    "image/png"
-                )
-            },
-            data={
-                "content": mensaje
-            },
-            timeout=30
-        )
-
-    response.raise_for_status()
-    print("Imagen enviada a Discord correctamente.")
+    print("Discord respuesta:", r.status_code)
+    print(r.text)
 
 else:
-    print("ERROR: No existe DISCORD_WEBHOOK_URL")
+    print("NO HAY WEBHOOK")
