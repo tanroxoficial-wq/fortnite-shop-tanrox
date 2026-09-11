@@ -1,11 +1,6 @@
-img.save("tienda-fortnite.png", "PNG")
-
-print("Imagen creada correctamente.")
-
-
-# ---------- ENVIAR A DISCORD ----------
-
 webhook = os.environ.get("DISCORD_WEBHOOK_URL")
+
+print("Webhook encontrado:", bool(webhook))
 
 if webhook:
     mensaje = (
