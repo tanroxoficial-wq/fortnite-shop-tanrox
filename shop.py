@@ -1,13 +1,18 @@
+img.save("tienda-fortnite.png", "PNG")
+
+print("Imagen creada correctamente.")
+
+
 # ---------- ENVIAR A DISCORD ----------
 
 webhook = os.environ.get("DISCORD_WEBHOOK_URL")
 
 if webhook:
     mensaje = (
-        "🔥 **NUEVA TIENDA DE FORTNITE** 🔥\n\n"
-        "🛒 Mira las mejores skins de hoy\n"
-        "⭐ Apoya a un creador: **TANROX**\n"
-        "🎮 Código de creador en la tienda de Fortnite"
+        "🔥 NUEVA TIENDA DE FORTNITE 🔥\n\n"
+        "🛒 Mejores skins de la tienda de hoy\n"
+        "⭐ Apoya a un creador: TANROX\n"
+        "🎮 Usa mi código TANROX en la tienda de Fortnite"
     )
 
     with open("tienda-fortnite.png", "rb") as image:
@@ -30,4 +35,4 @@ if webhook:
     print("Imagen enviada a Discord correctamente.")
 
 else:
-    print("No existe DISCORD_WEBHOOK_URL")
+    print("ERROR: No existe DISCORD_WEBHOOK_URL")
