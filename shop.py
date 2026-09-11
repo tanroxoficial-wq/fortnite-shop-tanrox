@@ -1,5 +1,7 @@
 # ---------- TEST DISCORD ----------
 
+print("ENTRANDO EN TEST DISCORD")
+
 webhook = os.environ.get("DISCORD_WEBHOOK_URL")
 
 print("Webhook encontrado:", bool(webhook))
